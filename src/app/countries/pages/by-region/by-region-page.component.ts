@@ -3,17 +3,17 @@ import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country';
 
 @Component({
-  selector: 'countries-by-country-page',
-  templateUrl: './by-country-page.component.html',
+  selector: 'countries-by-region-page',
+  templateUrl: './by-region-page.component.html',
   styles: [],
 })
-export class ByCountryPageComponent {
+export class ByRegionPageComponent {
   constructor(private readonly countriesService: CountriesService) {}
 
   public countries: Country[] = [];
 
-  searchByCountry(term: string): void {
-    this.countriesService.searchCountry(term).subscribe((countries) => {
+  searchByRegion(term: string): void {
+    this.countriesService.searchRegion(term).subscribe((countries) => {
       this.countries = countries;
     })
   }
